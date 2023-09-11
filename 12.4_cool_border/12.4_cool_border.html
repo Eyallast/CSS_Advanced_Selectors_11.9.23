@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12.4</title>
+</head>
+<style>
+  .box {
+  padding: 1em;
+  border: 0.25em solid;
+  position: relative;
+
+  &::before, &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: black;
+  }
+  
+  &::before {
+    top: -0.5em;
+    bottom: -0.5em;
+    left: 1em;
+    right: 1em;
+  }
+  
+  &::after{
+    left: -0.3em;
+    right: -0.3em;
+    top: 1em;
+    bottom: 1em;
+  }
+  
+  .heading {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: red;
+}
+
+</style>
+
+<body>
+  <h1 class="box">
+    <span class="heading">Cool border</span>
+  </h1>
+
+  </body>
+
+</html>
